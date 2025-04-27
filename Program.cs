@@ -57,9 +57,7 @@ class Product : Money
         Characteristics = characteristics;
     }
 
-    public virtual void Sound()
-    {
-    }
+    public virtual void Sound() { }
 
     public void Show()
     {
@@ -109,5 +107,91 @@ class Steamship : Device
     public override void Sound()
     {
         Console.WriteLine("Пароход: гудит...");
+    }
+}
+
+ public class MusicalInstrument
+{
+    protected string Name;
+    protected string Characteristics;
+
+    public MusicalInstrument(string name, string characteristics)
+    {
+        Name = name;
+        Characteristics = characteristics;
+    }
+
+    public virtual void Sound() { }
+
+    public void Show()
+    {
+        Console.WriteLine($"Инструмент: {Name}");
+    }
+
+    public void Desc()
+    {
+        Console.WriteLine($"Характеристики: {Characteristics}");
+    }
+
+    public virtual void History() { }
+}
+
+class Violin : MusicalInstrument
+{
+    public Violin(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Скрипка: красивое пение струн...");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Скрипка появилась в XVI веке в Италии.");
+    }
+}
+
+class Trombone : MusicalInstrument
+{
+    public Trombone(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Тромбон: мощный трубный звук...");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Тромбон появился в XV веке в Германии.");
+    }
+}
+
+class Ukulele : MusicalInstrument
+{
+    public Ukulele(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Укулеле: лёгкое бренчание...");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Укулеле появилась на Гавайях в XIX веке.");
+    }
+}
+
+class Cello : MusicalInstrument
+{
+    public Cello(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Виолончель: глубокий бархатный звук...");
+    }
+
+    public override void History()
+    {
+        Console.WriteLine("Виолончель появилась в XVI веке в Италии.");
     }
 }
