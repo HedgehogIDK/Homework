@@ -195,3 +195,40 @@ class Cello : MusicalInstrument
         Console.WriteLine("Виолончель появилась в XVI веке в Италии.");
     }
 }
+
+public abstract class Worker
+{
+    public abstract void Print();
+}
+
+class President : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Президент: отвечает за стратегию компании.");
+    }
+}
+
+class Security : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Охрана: обеспечивает безопасность.");
+    }
+}
+
+class Manager : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Менеджер: управляет процессами и проектами.");
+    }
+}
+
+class Engineer : Worker
+{
+    public override void Print()
+    {
+        Console.WriteLine("Инженер: разрабатывает и реализует технические решения.");
+    }
+}
