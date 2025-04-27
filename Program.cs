@@ -45,3 +45,69 @@ class Product : Money
         Console.WriteLine($"Товар: {Name}, цена: {Whole} единиц и {Cents} копеек");
     }
 }
+
+ public class Device
+{
+    protected string Name;
+    protected string Characteristics;
+
+    public Device(string name, string characteristics)
+    {
+        Name = name;
+        Characteristics = characteristics;
+    }
+
+    public virtual void Sound()
+    {
+    }
+
+    public void Show()
+    {
+        Console.WriteLine($"Устройство: {Name}");
+    }
+
+    public void Desc()
+    {
+        Console.WriteLine($"Характеристики: {Characteristics}");
+    }
+}
+
+class Kettle : Device
+{
+    public Kettle(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Чайник: шипит...");
+    }
+}
+
+class Microwave : Device
+{
+    public Microwave(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Микроволновка: пищит...");
+    }
+}
+
+class Car : Device
+{
+    public Car(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Автомобиль: врум-врум!");
+    }
+}
+
+class Steamship : Device
+{
+    public Steamship(string name, string characteristics) : base(name, characteristics) { }
+
+    public override void Sound()
+    {
+        Console.WriteLine("Пароход: гудит...");
+    }
+}
